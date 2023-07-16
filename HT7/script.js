@@ -2,16 +2,18 @@ let numOrStr = prompt('Input number or string');
 
 console.log(numOrStr);
 
-switch(numOrStr) {
-    case null:
-        console.log('Canseled');
-        break;
-    case '':
-        console.log('Empty String');
-        break;
-    case 'NaN':
-        console.log('Number is Ba_NaN');
-        break;
-    default:
-        console.log('OK!');
+switch (true) {
+  case numOrStr === null:
+    console.log('Canseled');
+    break;
+  case numOrStr === '':
+    console.log('Emptu input');
+    break;
+  case isNaN(Number(numOrStr)):
+    console.log('Value is NaN');
+    break;
+  default:
+    console.log('OK!');
+    break;
 }
+
