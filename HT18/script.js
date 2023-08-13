@@ -20,7 +20,10 @@ class Car {
         this.model = model;
         this.yearOfProduction = yearOfProduction;
         this.carNumber = carNumber;
-
+        this.ownerInfo(owner);
+    }
+// add method
+    ownerInfo(owner) {
         if(owner.age >= 18){
             this.owner = owner;
         } else {
