@@ -1,4 +1,3 @@
-
 class Student {
     constructor(firstName, lastName, age, marks) {
         this.firstName = firstName;
@@ -7,6 +6,8 @@ class Student {
         this.marks = marks;
         this.attendances = new Array(25).fill(undefined);
         this.workDay = 0;
+        this.sumAttendances = 0;
+        this.avarageMark = 0;
     } 
 
     
@@ -18,7 +19,16 @@ class Student {
             temp += element;
         }
 
-        return `Student ${this.firstName} ${this.lastName} is ${this.age} years old, average mark ${temp / this.marks.length}`;
+        for(let el of this.attendances){
+            if(el == true){
+                this.sumAttendances++;
+            }
+        }
+
+
+        this.avarageMark =  temp / this.marks.length;
+
+        return `Student ${this.firstName} ${this.lastName} is ${this.age} years old, average mark ${this.avarageMark}`;
     }
 
     
@@ -46,21 +56,10 @@ class Student {
     }
 
     summary(){
-        let sumAttendances = 0
-        for(let el of this.attendances){
-            if(el == true){
-                sumAttendances++;
-            }
-        }
 
-        let temp = 0;
-        for(let el of this.marks){
-            temp += el;
-        }
-
-        if(temp / this.marks.length > 90 && sumAttendances / 25 > 0.9){
+        if(this.avarageMark > 90 && this.sumAttendances / 25 > 0.9){
             console.log('Exelent');
-        } else if ((temp / this.marks.length > 90 && sumAttendances / 25 < 0.9) || (temp / this.marks.length < 90 && sumAttendances / 25 > 0.9)){
+        } else if ((this.avarageMark > 90 && this.sumAttendances / 25 < 0.9) || (this.avarageMark < 90 && this.sumAttendances / 25 > 0.9)){
             console.log('Good');
         } else {
             console.log('Can better');
