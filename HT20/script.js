@@ -2,9 +2,10 @@ let input = document.getElementById('input');
 let infoDiv = document.getElementById('infoDiv');
 
 input.addEventListener('focus', function(){
-    infoDiv.style.height = '100px';
+    infoDiv.style.display = 'block';
 });
 
 input.addEventListener('blur', function(){
-    infoDiv.style.height = '0px';
+    infoDiv.style.display = 'none';
 });
+
