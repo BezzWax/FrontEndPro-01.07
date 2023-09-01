@@ -22,20 +22,28 @@ class Product {
 		this.category = category;
 		this.price = price;
 		this.quantity = quantity;
+		this.fistColumn();
 	}
 
+
+	static uniqueCategories = {};
+
+
 	fistColumn() {
-		var paragraph = document.createElement("p");
-		paragraph.textContent = this.category;
-		typeOfProduct.appendChild(paragraph);
 
-		var self = this;
+		if (!Product.uniqueCategories[this.category]) {
+			const paragraph = document.createElement("p");
+			paragraph.textContent = this.category;
+			typeOfProduct.appendChild(paragraph);
 
-		paragraph.addEventListener('click', function () {
-			self.displayProductsByCategory(self.category);
-		});
+			var self = this;
 
-		return `Id ${this.id} Name ${this.name} Category ${this.category} Price ${this.price} ${this.quantity}`;
+			paragraph.addEventListener('click', function () {
+				self.displayProductsByCategory(self.category);
+			});
+
+			Product.uniqueCategories[this.category] = true;
+		}
 	}
 
 	displayProductsByCategory(category) {
@@ -78,4 +86,6 @@ const products = [
 // хвала метаниту
 for (const product of products) {
 	product.fistColumn();
+
 }
+
