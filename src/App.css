@@ -81,3 +81,7 @@
 ul {
   list-style: none;
 }
+
+.winner {
+  margin: 50px;
+}
