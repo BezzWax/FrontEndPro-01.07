@@ -1,0 +1,15 @@
+{
+  "devDependencies": {
+    "connect": "^3.7.0",
+    "gulp": "^4.0.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-csso": "^4.0.1",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-imagemin": "^9.0.0",
+    "gulp-jade": "^1.1.0",
+    "gulp-livereload": "^4.0.2",
+    "gulp-myth": "^2.0.0",
+    "gulp-stylus": "^3.0.1",
+    "gulp-uglify": "^3.0.2"
+  }
+}
